@@ -30,20 +30,20 @@ export class RestCommunicatorComponent  {
   }
 
   findAllShifts() {
-    this.http.get('http://192.168.178.28:7070/jarsx-first/api/windel')
+    this.http.get(' ')
       .subscribe(response => {
         this.posts = response.json();
       })
   }
 
   papa() {
-    this.http.get('http://192.168.178.28:7070/jarsx-first/api/windel/1')
+    this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/1')
     .subscribe(response => {
       this.findAllShifts();
     })
   }
   mama() {
-    this.http.get('http://192.168.178.28:7070/jarsx-first/api/windel/2')
+    this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/2')
     .subscribe(response => {
       this.findAllShifts();
     })
