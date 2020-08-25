@@ -30,7 +30,7 @@ export class RestCommunicatorComponent  {
   }
 
   findAllShifts() {
-    this.http.get(' ')
+    this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/')
       .subscribe(response => {
         this.posts = response.json();
       })
