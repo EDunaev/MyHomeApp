@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { WindelschichtService } from '../services/windelschicht.service';
 
 @Component({
   selector: 'app-rest-communicator',
@@ -10,7 +11,7 @@ export class RestCommunicatorComponent  {
 
 
   posts: any[];
-  constructor(private http: Http) { 
+  constructor(private windelschichtService: WindelschichtService) { 
     this.findAllShifts();
   }
 
@@ -30,24 +31,14 @@ export class RestCommunicatorComponent  {
   }
 
   findAllShifts() {
-    this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/')
-      .subscribe(response => {
-        this.posts = response.json();
-      })
+    this.windelschichtService.findAllShifts().subscribe(data => this.posts = data);
   }
 
   papa() {
-    this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/1')
-    .subscribe(response => {
-      this.findAllShifts();
-    })
+    this.windelschichtService.papa().subscribe(data => this.posts = data);
   }
   mama() {
-    this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/2')
-    .subscribe(response => {
-      this.findAllShifts();
-    })
+    this.windelschichtService.mama().subscribe(data => this.posts = data);
   }
-
 
 }

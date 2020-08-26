@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RestCommunicatorComponent } from './rest-communicator/rest-communicator.component';
+import { WindelschichtService } from './services/windelschicht.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { RestCommunicatorComponent } from './rest-communicator/rest-communicator
     BrowserModule,
     HttpModule
   ],
-  providers: [],
+  providers: [WindelschichtService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
