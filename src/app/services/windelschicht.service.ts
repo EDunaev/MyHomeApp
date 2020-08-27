@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WindelschichtService {
-
+  uri = environment.server;
   posts: any[];
   constructor(private http: Http) { }
 
 
   findAllShifts() {
-    return this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/')
+    return this.http.get(this.uri + '/api/windel/')
       .pipe(map(response => {
         return response.json();
       }))
   }
 
   papa() {
-    this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/1')
+    this.http.get(this.uri + '/api/windel/1')
     .subscribe(response => {});
     return this.findAllShifts();
   }
   mama() {
-    this.http.get('http://192.168.178.28:7070/windelschicht-server/api/windel/2')
+    this.http.get(this.uri + '/api/windel/2')
     .subscribe(response => {});
     return this.findAllShifts();
   }
