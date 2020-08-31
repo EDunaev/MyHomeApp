@@ -20,13 +20,15 @@ export class WindelschichtService {
   }
 
   papa() {
-    this.http.get(this.uri + '/api/windel/1')
-    .subscribe(response => {});
-    return this.findAllShifts();
+    return this.http.get(this.uri + '/api/windel/1')
+    .pipe(map(response => {
+      return response.json();
+    }))
   }
   mama() {
-    this.http.get(this.uri + '/api/windel/2')
-    .subscribe(response => {});
-    return this.findAllShifts();
+    return this.http.get(this.uri + '/api/windel/2')
+    .pipe(map(response => {
+      return response.json();
+    }))
   }
 }

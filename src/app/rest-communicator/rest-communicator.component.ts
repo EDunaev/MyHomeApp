@@ -35,10 +35,10 @@ export class RestCommunicatorComponent  {
   }
 
   papa() {
-    this.windelschichtService.papa().subscribe(data => this.posts = data);
+    this.windelschichtService.papa().subscribe(data => this.posts.push(data));
   }
   mama() {
-    this.windelschichtService.mama().subscribe(data => this.posts = data);
+    this.windelschichtService.mama().subscribe(data => this.posts.push(data));
   }
 
 }
