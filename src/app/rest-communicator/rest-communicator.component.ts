@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { WindelschichtService } from '../services/windelschicht.service';
 
 @Component({
@@ -11,6 +10,7 @@ export class RestCommunicatorComponent  {
 
 
   posts: any[];
+  selectedId: Number;
   constructor(private windelschichtService: WindelschichtService) { 
     this.findAllShifts();
   }
@@ -39,6 +39,29 @@ export class RestCommunicatorComponent  {
   }
   mama() {
     this.windelschichtService.mama().subscribe(data => this.posts.push(data));
+  }
+
+  onDelete(post) {
+    this.windelschichtService.delete(post.id).subscribe(res => {
+      var result: Boolean;
+      res === 'true' ? result = true: result = false; 
+      if(result) {
+        console.log("Entity " + post.id + " was deleted");
+        var index = this.posts.indexOf(post);
+        this.posts.splice(index, 1);
+      }
+      else{
+        console.log("Entity " + post.id + " was not deleted");
+      }
+    });
+  }
+
+  selectedPost(id: number) {
+    this.selectedId = id;
+  }
+
+  isPostSelected(id: number) {
+    return this.selectedId === id;
   }
 
 }

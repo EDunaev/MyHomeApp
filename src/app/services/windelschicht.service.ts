@@ -31,4 +31,10 @@ export class WindelschichtService {
       return response.json();
     }))
   }
+  delete(id: Number) {
+    return this.http.delete(this.uri + '/api/windel/' + id)
+    .pipe(map(response => {
+      return response.text();
+    }))
+  }
 }
