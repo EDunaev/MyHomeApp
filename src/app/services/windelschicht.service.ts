@@ -8,13 +8,15 @@ import { environment } from 'src/environments/environment';
 })
 export class WindelschichtService {
   uri = environment.server;
-  posts: any[];
   constructor(private http: Http) { }
 
 
   findAllShifts() {
     return this.http.get(this.uri + '/api/windel/')
       .pipe(map(response => {
+        console.log(response);
+        console.log(response.json());
+        
         return response.json();
       }))
   }

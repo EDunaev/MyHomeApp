@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { RestCommunicatorComponent } from './rest-communicator/rest-communicator.component';
+import { ContentTableComponent } from './content-table/content-table.component';
 import { WindelschichtService } from './services/windelschicht.service';
+import { ControlContentComponent } from './control-content/control-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestCommunicatorComponent
+    ContentTableComponent,
+    ControlContentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,44 @@
+<h1>Windelschicht</h1>
+<!-- <ul class="list-group">
+  <li class="list-group-item"
+    *ngFor="let post of posts"
+    class="list-group-item">
+    {{parent(post.parentId) }}, {{adjustedDate(post.date)}} <button class="btn btn-outline-danger" (click)="onDelete(post)">Delete</button>
+  </li>
+  <li><button class="btn btn-success" (click)="papa()">Papa</button> <button class="btn btn-info" (click)="mama()">Mama</button></li>
+</ul> -->
+
+<section class="container">
+  <div class="row">
+    <div [ngClass]="{
+      'col-md-12 col-sm-12': !selectedSchicht,
+      'col-md-8 col-sm-12': selectedSchicht
+    }">
+      <table class="table table-hover table-sm">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Wer</th>
+          <th>Datum</th>
+          <!-- <th></th> -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let post of posts; let i = index" (click)="selectedPost(post)" [class.table-active]=isPostSelected(post.id)>
+          <th scope="row">{{i + 1}}</th>
+          <td>{{post.parentsName}}</td>
+          <td>{{post.date}}</td>
+          <!-- <td><button class="btn btn-outline-danger" (click)="onDelete(post)">Delete</button></td> -->
+        </tr>
+        <tr></tr>
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div *ngIf="selectedSchicht" class="col-md-4 col-sm-12">
+      <app-control-content [post]="selectedSchicht"></app-control-content>
+    </div>
+  </div>
+  <div><button class="btn btn-success" (click)="papa()">Papa</button> <button class="btn btn-info" (click)="mama()">Mama</button></div>
+</section>
