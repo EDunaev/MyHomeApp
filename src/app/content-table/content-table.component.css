@@ -5,3 +5,7 @@ button {
  li, h1, div{
     text-align: center;
   }
+
+  .glyphicon {
+    float: right;
+}

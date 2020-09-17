@@ -10,10 +10,11 @@
 
 <section class="container">
   <div class="row">
-    <div [ngClass]="{
+    <!-- <div [ngClass]="{
       'col-md-12 col-sm-12': !selectedSchicht,
       'col-md-8 col-sm-12': selectedSchicht
-    }">
+    }"> -->
+    <div class='col-md-12 col-sm-12'>
       <table class="table table-hover table-sm">
         <thead>
         <tr>
@@ -24,21 +25,39 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let post of posts; let i = index" (click)="selectedPost(post)" [class.table-active]=isPostSelected(post.id)>
+        <tr>
+          <td colspan="3">
+            <div>
+              <span (click)="collapseExpand()" class="glyphicon"
+                [ngClass]="{
+                'glyphicon-chevron-up': isOpen, 
+                'glyphicon-chevron-down': !isOpen
+                }"
+                >
+              </span>
+            </div> 
+          </td>
+        </tr>
+        <tr *ngFor="let post of selectedPosts; let i = index" (click)="selectedPost(post)" [class.table-active]=isPostSelected(post.id)>
           <th scope="row">{{i + 1}}</th>
           <td>{{post.parentsName}}</td>
-          <td>{{post.date}}</td>
+          <td>
+            <div>{{post.date}}</div> 
+            <div *ngIf="isPostSelected(post.id)" >
+              <button class="btn btn-info btn-sm" style="float: right;" (click)="onChange(post)">Change</button>
+              <button class="btn btn-outline-danger btn-sm" style="float: right;" (click)="onDelete(post)">Delete</button>
+            </div>
+          </td>
+
           <!-- <td><button class="btn btn-outline-danger" (click)="onDelete(post)">Delete</button></td> -->
         </tr>
         <tr></tr>
         </tbody>
       </table>
     </div>
-    
-    
-    <div *ngIf="selectedSchicht" class="col-md-4 col-sm-12">
+    <!-- <div *ngIf="selectedSchicht" class="col-md-4 col-sm-12">
       <app-control-content [post]="selectedSchicht"></app-control-content>
-    </div>
+    </div> -->
   </div>
   <div><button class="btn btn-success" (click)="papa()">Papa</button> <button class="btn btn-info" (click)="mama()">Mama</button></div>
 </section>
