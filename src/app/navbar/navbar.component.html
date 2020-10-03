@@ -1,0 +1,37 @@
+<!-- <div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="glyphicon glyphicon-home" routerLink="/"></a>
+        </div>
+    
+        <div id="main-menu" class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active"><a routerLink="/windelschicht">Windelschicht</a></li>
+
+                <li routerLinkActive="active"><a routerLink="/test">Test </a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+</div> -->
+
+<!-- <mat-tab-group animationDuration="0ms">
+    <mat-tab (click)="onClick()"label="Home"></mat-tab>
+    <mat-tab label="Windelschicht"></mat-tab>
+    <mat-tab label="Test"></mat-tab>
+  </mat-tab-group> -->
+
+  <nav mat-tab-nav-bar [backgroundColor]="background">
+    <a mat-tab-link *ngFor="let link of links"
+       (click)="activeLink = link;"
+       [routerLink]="[link.link]"
+       [active]="activeLink == link"> {{link.name}} </a>
+  </nav>

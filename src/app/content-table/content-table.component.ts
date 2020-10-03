@@ -14,6 +14,7 @@ export class ContentTableComponent implements OnInit{
   posts: SchichtTO[] = [];
   selectedPosts: SchichtTO[] = [];
   selectedSchicht: SchichtTO;
+  panelOpenState = false;
 
   constructor(private windelschichtService: WindelschichtService) { }
   
