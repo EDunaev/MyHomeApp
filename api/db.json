@@ -126,5 +126,104 @@
           }
        }
     }
- ]
+ ],
+ "income": [
+   {
+       "id": 1,
+       "income": 219,
+       "familyMember": {
+           "id": 1,
+           "name": "Aurora"
+       }
+   },
+   {
+       "id": 2,
+       "income": 500,
+       "familyMember": {
+           "id": 2,
+           "name": "Elena"
+       }
+   },
+   {
+       "id": 3,
+       "income": 1000,
+       "familyMember": {
+           "id": 3,
+           "name": "Evgeny"
+       }
+   },
+   {
+       "id": 8,
+       "income": 0,
+       "familyMember": {
+           "id": 4,
+           "name": "Pedros"
+       }
+   }
+], "output": [
+   {
+       "id": 1,
+       "name": "Wohnung",
+       "entryPrice": 1070,
+       "itemComment": "Miete Wohnung",
+       "itemType": "Wohnung",
+       "monthEntryId": {
+           "id": 1,
+           "entryYear": 2021,
+           "entryMonth": 9,
+           "expectedState": 1719,
+           "realState": 0,
+           "actualState": 0
+       }
+   },
+   {
+       "id": 2,
+       "name": "Stellplatz",
+       "entryPrice": 1070,
+       "itemComment": "Miete Stellplatz",
+       "itemType": "Wohnung",
+       "monthEntryId": {
+           "id": 1,
+           "entryYear": 2021,
+           "entryMonth": 9,
+           "expectedState": 1719,
+           "realState": 0,
+           "actualState": 0
+       }
+   }
+], "month-entry": [
+   {
+       "id": 1,
+       "entryYear": 2021,
+       "entryMonth": 9,
+       "expectedState": 1719,
+       "realState": 0,
+       "actualState": 0
+   },
+   {
+       "id": 2,
+       "entryYear": 2021,
+       "entryMonth": 10,
+       "expectedState": 1719,
+       "realState": 0,
+       "actualState": 0
+   },
+   {
+       "id": 3,
+       "entryYear": 2021,
+       "entryMonth": 11,
+       "expectedState": 1719,
+       "realState": 0,
+       "actualState": 0
+   },
+   {
+       "id": 4,
+       "entryYear": 2021,
+       "entryMonth": 12,
+       "expectedState": 1719,
+       "realState": 0,
+       "actualState": 0
+   }
+]
+
 }
