@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   links: any[] = [
     { name : 'Home', link : '/home'}, 
     { name : 'Windelschicht', link : '/windelschicht'},
-    { name : 'Test', link : '/test'}];
+    { name : 'Finances', link : '/finances'}];
   activeLink = this.links[0];
   background: ThemePalette = undefined;
 
@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.activatedRoute.snapshot.root);
+    this.router.navigate([this.activeLink.link]);
     
     
     

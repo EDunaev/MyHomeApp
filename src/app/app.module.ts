@@ -29,7 +29,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     RouterModule.forRoot([
       { path : '', component: HomeComponent},
       { path : 'windelschicht', component: ContentTableComponent},
-      { path : 'test', component: ChangeSchichtComponent},
+      { path : 'finances', component: ChangeSchichtComponent},
       { path : '**', component: HomeComponent}
     ]),
     BrowserAnimationsModule,
