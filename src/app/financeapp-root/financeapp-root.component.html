@@ -1,0 +1,4 @@
+<mat-tab-group>
+    *ngFor="let post of selectedPosts; let i = index" (click)="selectedPost(post)" [class.table-active]=isPostSelected(post.id)
+    <mat-tab *ngFor="let month of monthEntries" [label]='getmonthAndYear(month)'><app-main-desk [month]='month'></app-main-desk></mat-tab>
+</mat-tab-group>

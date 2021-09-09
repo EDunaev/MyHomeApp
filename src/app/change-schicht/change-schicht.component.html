@@ -1,5 +1,21 @@
-<p style="text-align: center;">This page is not implemented yet</p>
+
+<button 
+    class="bnt btn-primary"
+    [disabled]="isActivated"
+    (click)="makeSomeText()">Test button</button>
+<input
+    type="text"
+    class="form-control"
+    (input)="setSomeText($event)">
 
 
 
-<mat-card><img src= "assets/img/IMG_20200830_190143.jpg" alt="family" class="stretch"></mat-card>
+
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="textSomething">
+
+
+    <p> {{isActivated}}</p>
+<p class="">{{textSomething}}</p>

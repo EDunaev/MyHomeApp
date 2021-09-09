@@ -11,7 +11,8 @@ export class NavbarComponent implements OnInit {
   links: any[] = [
     { name : 'Home', link : '/home'}, 
     { name : 'Windelschicht', link : '/windelschicht'},
-    { name : 'Finances', link : '/finances'}];
+    { name : 'Finances', link : '/finances'},
+    { name : 'Test', link : '/test'}];
   activeLink = this.links[0];
   background: ThemePalette = undefined;
 

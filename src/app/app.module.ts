@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -11,9 +12,14 @@ import { RouterModule } from '@angular/router';
 import { ChangeSchichtComponent } from './change-schicht/change-schicht.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatCardModule} from '@angular/material/card';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MonthEntryService } from './services/month-entry.service';
+import { FinanceappRootComponent } from './financeapp-root/financeapp-root.component';
+import { IncomeService } from './services/income.service';
+import { OutputService } from './services/output.service';
+import { MainDeskComponent } from './financeapp-root/main-desk/main-desk.component';
 
 @NgModule({
   declarations: [
@@ -21,24 +27,28 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ContentTableComponent,
     HomeComponent,
     NavbarComponent,
-    ChangeSchichtComponent
+    ChangeSchichtComponent,
+    FinanceappRootComponent,
+    MainDeskComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path : '', component: HomeComponent},
-      { path : 'windelschicht', component: ContentTableComponent},
-      { path : 'finances', component: ChangeSchichtComponent},
-      { path : '**', component: HomeComponent}
+      { path: '', component: HomeComponent },
+      { path: 'windelschicht', component: ContentTableComponent },
+      { path: 'finances', component: FinanceappRootComponent },
+      { path: 'test', component: ChangeSchichtComponent },
+      { path: '**', component: HomeComponent }
     ]),
     BrowserAnimationsModule,
     MatSliderModule,
     MatTabsModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    FormsModule
   ],
-  providers: [WindelschichtService],
+  providers: [WindelschichtService, MonthEntryService, IncomeService, OutputService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
