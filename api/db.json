@@ -1,229 +1,254 @@
 {
-  "windel":  [
+  "windel": [
     {
-       "id":134,
-       "parentId":2,
-       "date":{
-          "year":2000,
-          "month":"AUGUST",
-          "monthValue":8,
-          "dayOfMonth":12,
-          "dayOfWeek":"WEDNESDAY",
-          "era":"CE",
-          "dayOfYear":225,
-          "leapYear":true,
-          "chronology":{
-             "calendarType":"iso8601",
-             "id":"ISO"
-          }
-       }
+      "id": 134,
+      "parentId": 2,
+      "date": {
+        "year": 2000,
+        "month": "AUGUST",
+        "monthValue": 8,
+        "dayOfMonth": 12,
+        "dayOfWeek": "WEDNESDAY",
+        "era": "CE",
+        "dayOfYear": 225,
+        "leapYear": true,
+        "chronology": {
+          "calendarType": "iso8601",
+          "id": "ISO"
+        }
+      }
     },
     {
-       "id":135,
-       "parentId":2,
-       "date":{
-          "year":2006,
-          "month":"AUGUST",
-          "monthValue":8,
-          "dayOfMonth":14,
-          "dayOfWeek":"FRIDAY",
-          "era":"CE",
-          "dayOfYear":227,
-          "leapYear":true,
-          "chronology":{
-             "calendarType":"iso8601",
-             "id":"ISO"
-          }
-       }
+      "id": 135,
+      "parentId": 2,
+      "date": {
+        "year": 2006,
+        "month": "AUGUST",
+        "monthValue": 8,
+        "dayOfMonth": 14,
+        "dayOfWeek": "FRIDAY",
+        "era": "CE",
+        "dayOfYear": 227,
+        "leapYear": true,
+        "chronology": {
+          "calendarType": "iso8601",
+          "id": "ISO"
+        }
+      }
     },
     {
-       "id":136,
-       "parentId":1,
-       "date":{
-          "year":2020,
-          "month":"AUGUST",
-          "monthValue":8,
-          "dayOfMonth":16,
-          "dayOfWeek":"SUNDAY",
-          "era":"CE",
-          "dayOfYear":229,
-          "leapYear":true,
-          "chronology":{
-             "calendarType":"iso8601",
-             "id":"ISO"
-          }
-       }
+      "id": 136,
+      "parentId": 1,
+      "date": {
+        "year": 2020,
+        "month": "AUGUST",
+        "monthValue": 8,
+        "dayOfMonth": 16,
+        "dayOfWeek": "SUNDAY",
+        "era": "CE",
+        "dayOfYear": 229,
+        "leapYear": true,
+        "chronology": {
+          "calendarType": "iso8601",
+          "id": "ISO"
+        }
+      }
     },
     {
-       "id":137,
-       "parentId":2,
-       "date":{
-          "year":2020,
-          "month":"AUGUST",
-          "monthValue":8,
-          "dayOfMonth":22,
-          "dayOfWeek":"SATURDAY",
-          "era":"CE",
-          "dayOfYear":235,
-          "leapYear":true,
-          "chronology":{
-             "calendarType":"iso8601",
-             "id":"ISO"
-          }
-       }
+      "id": 137,
+      "parentId": 2,
+      "date": {
+        "year": 2020,
+        "month": "AUGUST",
+        "monthValue": 8,
+        "dayOfMonth": 22,
+        "dayOfWeek": "SATURDAY",
+        "era": "CE",
+        "dayOfYear": 235,
+        "leapYear": true,
+        "chronology": {
+          "calendarType": "iso8601",
+          "id": "ISO"
+        }
+      }
     },
     {
-       "id":138,
-       "parentId":1,
-       "date":{
-          "year":2020,
-          "month":"AUGUST",
-          "monthValue":8,
-          "dayOfMonth":22,
-          "dayOfWeek":"SATURDAY",
-          "era":"CE",
-          "dayOfYear":235,
-          "leapYear":true,
-          "chronology":{
-             "calendarType":"iso8601",
-             "id":"ISO"
-          }
-       }
+      "id": 138,
+      "parentId": 1,
+      "date": {
+        "year": 2020,
+        "month": "AUGUST",
+        "monthValue": 8,
+        "dayOfMonth": 22,
+        "dayOfWeek": "SATURDAY",
+        "era": "CE",
+        "dayOfYear": 235,
+        "leapYear": true,
+        "chronology": {
+          "calendarType": "iso8601",
+          "id": "ISO"
+        }
+      }
     },
     {
-       "id":139,
-       "parentId":2,
-       "date":{
-          "year":2020,
-          "month":"AUGUST",
-          "monthValue":8,
-          "dayOfMonth":24,
-          "dayOfWeek":"MONDAY",
-          "era":"CE",
-          "dayOfYear":237,
-          "leapYear":true,
-          "chronology":{
-             "calendarType":"iso8601",
-             "id":"ISO"
-          }
-       }
+      "id": 139,
+      "parentId": 2,
+      "date": {
+        "year": 2020,
+        "month": "AUGUST",
+        "monthValue": 8,
+        "dayOfMonth": 24,
+        "dayOfWeek": "MONDAY",
+        "era": "CE",
+        "dayOfYear": 237,
+        "leapYear": true,
+        "chronology": {
+          "calendarType": "iso8601",
+          "id": "ISO"
+        }
+      }
     },
     {
-       "id":140,
-       "parentId":1,
-       "date":{
-          "year":2020,
-          "month":"AUGUST",
-          "monthValue":8,
-          "dayOfMonth":25,
-          "dayOfWeek":"TUESDAY",
-          "era":"CE",
-          "dayOfYear":238,
-          "leapYear":true,
-          "chronology":{
-             "calendarType":"iso8601",
-             "id":"ISO"
-          }
-       }
+      "id": 140,
+      "parentId": 1,
+      "date": {
+        "year": 2020,
+        "month": "AUGUST",
+        "monthValue": 8,
+        "dayOfMonth": 25,
+        "dayOfWeek": "TUESDAY",
+        "era": "CE",
+        "dayOfYear": 238,
+        "leapYear": true,
+        "chronology": {
+          "calendarType": "iso8601",
+          "id": "ISO"
+        }
+      }
     }
- ],
- "income": [
-   {
-       "id": 1,
-       "income": 219,
-       "familyMember": {
-           "id": 1,
-           "name": "Aurora"
-       }
-   },
-   {
-       "id": 2,
-       "income": 500,
-       "familyMember": {
-           "id": 2,
-           "name": "Elena"
-       }
-   },
-   {
-       "id": 3,
-       "income": 1000,
-       "familyMember": {
-           "id": 3,
-           "name": "Evgeny"
-       }
-   },
-   {
-       "id": 8,
-       "income": 0,
-       "familyMember": {
-           "id": 4,
-           "name": "Pedros"
-       }
-   }
-], "output": [
-   {
-       "id": 1,
-       "name": "Wohnung",
-       "entryPrice": 1070,
-       "itemComment": "Miete Wohnung",
-       "itemType": "Wohnung",
-       "monthEntryId": {
-           "id": 1,
-           "entryYear": 2021,
-           "entryMonth": 9,
-           "expectedState": 1719,
-           "realState": 0,
-           "actualState": 0
-       }
-   },
-   {
-       "id": 2,
-       "name": "Stellplatz",
-       "entryPrice": 1070,
-       "itemComment": "Miete Stellplatz",
-       "itemType": "Wohnung",
-       "monthEntryId": {
-           "id": 1,
-           "entryYear": 2021,
-           "entryMonth": 9,
-           "expectedState": 1719,
-           "realState": 0,
-           "actualState": 0
-       }
-   }
-], "month-entry": [
-   {
-       "id": 1,
-       "entryYear": 2021,
-       "entryMonth": 9,
-       "expectedState": 1719,
-       "realState": 0,
-       "actualState": 0
-   },
-   {
-       "id": 2,
-       "entryYear": 2021,
-       "entryMonth": 10,
-       "expectedState": 1719,
-       "realState": 0,
-       "actualState": 0
-   },
-   {
-       "id": 3,
-       "entryYear": 2021,
-       "entryMonth": 11,
-       "expectedState": 1719,
-       "realState": 0,
-       "actualState": 0
-   },
-   {
-       "id": 4,
-       "entryYear": 2021,
-       "entryMonth": 12,
-       "expectedState": 1719,
-       "realState": 0,
-       "actualState": 0
-   }
-]
-
+  ],
+  "income": [
+    {
+        "id": 1,
+        "income": 219,
+        "familyMember": {
+            "id": 1,
+            "name": "Aurora"
+        },
+        "monthEntry": {
+            "id": 1,
+            "entryYear": 2021,
+            "entryMonth": 9,
+            "expectedState": 0,
+            "realState": 0,
+            "actualState": 0
+        }
+    },
+    {
+        "id": 2,
+        "income": 1770,
+        "familyMember": {
+            "id": 2,
+            "name": "Elena"
+        },
+        "monthEntry": {
+            "id": 1,
+            "entryYear": 2021,
+            "entryMonth": 9,
+            "expectedState": 0,
+            "realState": 0,
+            "actualState": 0
+        }
+    },
+    {
+        "id": 3,
+        "income": 3301,
+        "familyMember": {
+            "id": 3,
+            "name": "Evgeny"
+        },
+        "monthEntry": {
+            "id": 1,
+            "entryYear": 2021,
+            "entryMonth": 9,
+            "expectedState": 0,
+            "realState": 0,
+            "actualState": 0
+        }
+    }
+],
+  "output": [
+    {
+        "id": 1,
+        "name": "Wohnung",
+        "entryPrice": 1070,
+        "itemComment": "Miete Wohnung",
+        "itemType": "Wohnung",
+        "monthEntryId": {
+            "id": 1,
+            "entryYear": 2021,
+            "entryMonth": 9,
+            "expectedState": 0,
+            "realState": 0,
+            "actualState": 0
+        }
+    },
+    {
+        "id": 2,
+        "name": "Stellplatz",
+        "entryPrice": 1070,
+        "itemComment": "Miete Stellplatz",
+        "itemType": "Wohnung",
+        "monthEntryId": {
+            "id": 1,
+            "entryYear": 2021,
+            "entryMonth": 9,
+            "expectedState": 0,
+            "realState": 0,
+            "actualState": 0
+        }
+    },
+    {
+        "id": 3,
+        "name": "Wohnung",
+        "entryPrice": 1070,
+        "itemComment": "Miete Wohnung",
+        "itemType": "Wohnung",
+        "monthEntryId": null
+    }
+],
+  "month-entry": [
+    {
+      "id": 1,
+      "entryYear": 2021,
+      "entryMonth": 9,
+      "expectedState": 1719,
+      "realState": 0,
+      "actualState": 0
+    },
+    {
+      "id": 2,
+      "entryYear": 2021,
+      "entryMonth": 10,
+      "expectedState": 1719,
+      "realState": 0,
+      "actualState": 0
+    },
+    {
+      "id": 3,
+      "entryYear": 2021,
+      "entryMonth": 11,
+      "expectedState": 1719,
+      "realState": 0,
+      "actualState": 0
+    },
+    {
+      "id": 4,
+      "entryYear": 2021,
+      "entryMonth": 12,
+      "expectedState": 1719,
+      "realState": 0,
+      "actualState": 0
+    }
+  ]
 }
