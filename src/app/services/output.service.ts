@@ -13,7 +13,7 @@ export class OutputService {
 
 
   findAllOutputs() {
-    return this.http.get(this.uri + '/api/output').pipe();
+    return this.http.get(this.uri + '/api/outputs').pipe();
   }
 
   findOutputsByMonthId(id: number) {

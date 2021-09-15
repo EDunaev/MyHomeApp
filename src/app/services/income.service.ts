@@ -11,7 +11,7 @@ export class IncomeService {
   constructor(private http: HttpClient) {}
 
   findAllIncomes() {
-    return this.http.get(this.uri + '/api/income').pipe();
+    return this.http.get(this.uri + '/api/incomes').pipe();
   }
 
   findIncomesByMonthId(id: number) {
