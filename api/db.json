@@ -129,94 +129,208 @@
   ],
   "income": [
     {
+      "id": 1,
+      "income": 160,
+      "familyMember": {
         "id": 1,
-        "income": 219,
-        "familyMember": {
-            "id": 1,
-            "name": "Aurora"
-        },
-        "monthEntry": {
-            "id": 1,
-            "entryYear": 2021,
-            "entryMonth": 9,
-            "expectedState": 0,
-            "realState": 0,
-            "actualState": 0
-        }
+        "name": "Aurora"
+      },
+      "monthEntry": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
     },
     {
+      "id": 2,
+      "income": 570,
+      "familyMember": {
         "id": 2,
-        "income": 1770,
-        "familyMember": {
-            "id": 2,
-            "name": "Elena"
-        },
-        "monthEntry": {
-            "id": 1,
-            "entryYear": 2021,
-            "entryMonth": 9,
-            "expectedState": 0,
-            "realState": 0,
-            "actualState": 0
-        }
+        "name": "Elena"
+      },
+      "monthEntry": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
     },
     {
+      "id": 3,
+      "income": 1100,
+      "familyMember": {
         "id": 3,
-        "income": 3301,
-        "familyMember": {
-            "id": 3,
-            "name": "Evgeny"
-        },
-        "monthEntry": {
-            "id": 1,
-            "entryYear": 2021,
-            "entryMonth": 9,
-            "expectedState": 0,
-            "realState": 0,
-            "actualState": 0
-        }
+        "name": "Evgeny"
+      },
+      "monthEntry": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
+    },
+    {
+      "id": 4,
+      "income": 0,
+      "familyMember": {
+        "id": 1,
+        "name": "Aurora"
+      },
+      "monthEntry": {
+        "id": 2,
+        "entryYear": 2021,
+        "entryMonth": 10,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
+    },
+    {
+      "id": 5,
+      "income": 0,
+      "familyMember": {
+        "id": 2,
+        "name": "Elena"
+      },
+      "monthEntry": {
+        "id": 2,
+        "entryYear": 2021,
+        "entryMonth": 10,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
+    },
+    {
+      "id": 6,
+      "income": 0,
+      "familyMember": {
+        "id": 3,
+        "name": "Evgeny"
+      },
+      "monthEntry": {
+        "id": 2,
+        "entryYear": 2021,
+        "entryMonth": 10,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
     }
-],
+  ],
+  "incomes-by-month": [
+    {
+      "id": 1,
+      "income": 219,
+      "familyMember": {
+        "id": 1,
+        "name": "Aurora"
+      },
+      "monthEntry": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
+    },
+    {
+      "id": 1,
+      "income": 1770,
+      "familyMember": {
+        "id": 2,
+        "name": "Elena"
+      },
+      "monthEntry": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
+    }
+  ],
   "output": [
     {
+      "id": 1,
+      "name": "Wohnung",
+      "entryPrice": 1070,
+      "itemComment": "Miete Wohnung",
+      "itemType": "Wohnung",
+      "monthEntryId": {
         "id": 1,
-        "name": "Wohnung",
-        "entryPrice": 1070,
-        "itemComment": "Miete Wohnung",
-        "itemType": "Wohnung",
-        "monthEntryId": {
-            "id": 1,
-            "entryYear": 2021,
-            "entryMonth": 9,
-            "expectedState": 0,
-            "realState": 0,
-            "actualState": 0
-        }
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
     },
     {
-        "id": 2,
-        "name": "Stellplatz",
-        "entryPrice": 1070,
-        "itemComment": "Miete Stellplatz",
-        "itemType": "Wohnung",
-        "monthEntryId": {
-            "id": 1,
-            "entryYear": 2021,
-            "entryMonth": 9,
-            "expectedState": 0,
-            "realState": 0,
-            "actualState": 0
-        }
+      "id": 2,
+      "name": "Stellplatz",
+      "entryPrice": 1070,
+      "itemComment": "Miete Stellplatz",
+      "itemType": "Wohnung",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
     },
     {
-        "id": 3,
-        "name": "Wohnung",
-        "entryPrice": 1070,
-        "itemComment": "Miete Wohnung",
-        "itemType": "Wohnung",
-        "monthEntryId": null
+      "id": 3,
+      "name": "Wohnung",
+      "entryPrice": 1070,
+      "itemComment": "Miete Wohnung",
+      "itemType": "Wohnung",
+      "monthEntryId": null
     }
-],
+  ],
+  "outputs-by-month": [
+    {
+      "id": 1,
+      "name": "Wohnung",
+      "entryPrice": 1070,
+      "itemComment": "Miete Wohnung",
+      "itemType": "Wohnung",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
+    },
+    {
+      "id": 2,
+      "name": "Stellplatz",
+      "entryPrice": 1070,
+      "itemComment": "Miete Stellplatz",
+      "itemType": "Wohnung",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 0,
+        "realState": 0,
+        "actualState": 0
+      }
+    }
+  ],
   "month-entry": [
     {
       "id": 1,

@@ -23,11 +23,11 @@ export class FinanceappRootComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllEntries();
-    this.findAllIncomes();
-    this.findAllOutputs();
+    // this.findAllIncomes();
+    // this.findAllOutputs();
     console.log(this.monthEntries);
-    console.log(this.incomes);
-    console.log(this.outputs);
+    // console.log(this.incomes);
+    // console.log(this.outputs);
   }
 
 

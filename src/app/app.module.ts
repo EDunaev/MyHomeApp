@@ -20,6 +20,9 @@ import { FinanceappRootComponent } from './financeapp-root/financeapp-root.compo
 import { IncomeService } from './services/income.service';
 import { OutputService } from './services/output.service';
 import { MainDeskComponent } from './financeapp-root/main-desk/main-desk.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { IncomeTableComponent } from './financeapp-root/income-table/income-table.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { MainDeskComponent } from './financeapp-root/main-desk/main-desk.compone
     NavbarComponent,
     ChangeSchichtComponent,
     FinanceappRootComponent,
-    MainDeskComponent
+    MainDeskComponent,
+    IncomeTableComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ import { MainDeskComponent } from './financeapp-root/main-desk/main-desk.compone
     MatTabsModule,
     MatCardModule,
     MatExpansionModule,
-    FormsModule
+    FormsModule,
+    MatGridListModule
   ],
   providers: [WindelschichtService, MonthEntryService, IncomeService, OutputService],
   bootstrap: [AppComponent]
