@@ -1,0 +1,63 @@
+<h1 mat-dialog-title>{{output.id?"Change output dialog":"Create output dialog"}}</h1>
+<!-- <div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Id</mat-label>
+        <input matInput [(ngModel)]="output.id" value={{output.id}}>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="output.name" value={{output.name}}>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput [(ngModel)]="output.entryPrice" value={{output.entryPrice}} [disabled]='output.isPaid'>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Comment</mat-label>
+        <input matInput [(ngModel)]="output.itemComment" value={{output.itemComment}}>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Type</mat-label>
+        <input matInput [(ngModel)]="output.itemType" value={{output.itemType}}>
+    </mat-form-field>
+
+    <mat-checkbox [(ngModel)]="output.isPaid" value={{output.isPaid}} class="example-margin">Paid</mat-checkbox>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="output">Ok</button>
+</div> -->
+
+<form [formGroup]="form" class="normal-form" (submit)="onSubmit()">
+          <div class="controles-container">
+            <mat-form-field>
+                <input formControlName="id" [(ngModel)]="output.id" matInput value={{output.id}} placeholder="Id" >
+              <mat-error>Only number.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="name" [(ngModel)]="output.name" matInput placeholder="Name" value={{output.name}}>
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="price" [(ngModel)]="output.entryPrice" matInput placeholder="Price" value={{output.entryPrice}} >
+              <mat-error>This field is mandatory and only number</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="comment" [(ngModel)]="output.itemComment" matInput placeholder="Comment" value={{output.itemComment}}>
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="type" [(ngModel)]="output.itemType" matInput placeholder="Type" value={{output.itemType}}>
+              <mat-error>This field is mandatory.</mat-error>
+            </mat-form-field>
+            <div class="add-bottom-padding">
+              <mat-checkbox [(ngModel)]="output.isPaid" value={{output.isPaid}} formControlName="isPaid" (selectionChange)="onSelectionChanged($event)">Paid</mat-checkbox>
+            </div>
+          </div>
+          <div class="button-row">
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-button  [disabled]="form.invalid" type="submit" [mat-dialog-close]="output">OK</button>
+          </div>
+</form>

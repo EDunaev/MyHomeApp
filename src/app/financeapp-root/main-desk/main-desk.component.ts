@@ -75,4 +75,10 @@ export class MainDeskComponent implements OnInit {
     console.log(this.incomes);
   }
 
+  saveOrUpdateOutput(output: OutputTO){
+    console.log(output.name + " is paid? " + output.isPaid);
+    this.outputService.updateOutput(output).subscribe();
+    console.log(this.outputs);
+  }
+
 }

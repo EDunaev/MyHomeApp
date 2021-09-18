@@ -266,6 +266,7 @@
       "entryPrice": 1070,
       "itemComment": "Miete Wohnung",
       "itemType": "Wohnung",
+      "isPaid": false,
       "monthEntryId": {
         "id": 1,
         "entryYear": 2021,
@@ -278,9 +279,10 @@
     {
       "id": 2,
       "name": "Stellplatz",
-      "entryPrice": 1070,
+      "entryPrice": 60,
       "itemComment": "Miete Stellplatz",
       "itemType": "Wohnung",
+      "isPaid": false,
       "monthEntryId": {
         "id": 1,
         "entryYear": 2021,

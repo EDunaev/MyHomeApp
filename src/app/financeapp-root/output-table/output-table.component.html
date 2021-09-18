@@ -1,0 +1,37 @@
+<table class="table table-hover table-sm">
+    <thead>
+        <tr>
+            <th *ngFor="let head of displayedColumns" scope="col">{{head}} </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let output of outputs" (click)="selectOutput(output)" [ngClass]="{
+            'bg-success': output.isPaid, 
+            '': !output.isPaid
+            }">
+            <td>{{output.name}}</td>
+            <td>
+                {{output.itemType}}
+            </td>
+            <td>{{output.entryPrice | currency:'EUR':true}}</td>
+            <td>
+                <button mdbBtn color="danger" size="lg" mdbWavesEffect (click)="setAsPaid(output)" [ngClass]="{
+                    'disabled': output.isPaid, 
+                    '': !output.isPaid
+                    }"
+                    [disabled]='output.isPaid'>
+                    Paid
+                </button>
+                <button mdbBtn color="warning" size="lg" mdbWavesEffect (click)="openDialog(output)">Edit</button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total</td>
+            <td></td>
+            <td>{{getTotalCost() | currency:'EUR':true}}</td>
+        </tr>
+    </tfoot>
+
+</table>

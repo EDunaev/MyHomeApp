@@ -2,13 +2,13 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1" >
-       <income-table [incomes]='incomes' (newItemEvent)="saveOrUpdateIncome($event)"></income-table>
+       <income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)"></income-table>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
     <mat-grid-tile [colspan]="3" [rowspan]="1" >
-        <p>{{month.entryYear}}</p>
+        <output-table [outputs]="outputs" (newItemEvent)="saveOrUpdateOutput($event)"></output-table>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
 </mat-grid-list>
