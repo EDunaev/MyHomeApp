@@ -1,14 +1,62 @@
-<mat-grid-list cols="5" rowHeight="300px">
+<!-- <mat-grid-list cols="3" rowHeight="2:1">
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1" >
-       <income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)"></income-table>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
-    <mat-grid-tile [colspan]="3" [rowspan]="1" >
-        <output-table [outputs]="outputs" (newItemEvent)="saveOrUpdateOutput($event)"></output-table>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)"></income-table>
     </mat-grid-tile>
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
 </mat-grid-list>
+
+
+<div style="padding:5%" >
+    <output-table [outputs]="outputs" (newItemEvent)="saveOrUpdateOutput($event)"></output-table>
+</div>
+
+
+
+
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <table class="table table-striped table-bordered table-small">
+            <tbody>
+                <tr>
+                    <th>Expected</th>
+                    <td> {{month.expectedState}} </td>
+                </tr>
+                <tr>
+                    <th>Real State</th>
+                    <td> {{month.realState}} </td>
+                </tr>
+                <tr>
+                    <th>Actual State</th>
+                    <td> {{month.actualState}} </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+</mat-grid-list> -->
+
+<div>
+
+    <income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)"></income-table>
+    <output-table [outputs]="outputs" (newItemEvent)="saveOrUpdateOutput($event)"></output-table>
+    <table class="table table-striped table-bordered table-small">
+        <tbody>
+            <tr>
+                <th>Expected</th>
+                <td> {{month.expectedState}} </td>
+            </tr>
+            <tr>
+                <th>Real State</th>
+                <td> {{month.realState}} </td>
+            </tr>
+            <tr>
+                <th>Actual State</th>
+                <td> {{month.actualState}} </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

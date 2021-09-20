@@ -20,8 +20,6 @@ export class OutputTableComponent implements OnInit {
   }
 
   selectOutput(output: OutputTO) {
-    console.log(output);
-
     this.selectedOutput = output;
   }
   setAsPaid(output: OutputTO) {
@@ -40,7 +38,7 @@ export class OutputTableComponent implements OnInit {
     return this.selectedOutput && this.selectedOutput.id === id;
   }
 
-  openDialog(output: OutputTO) {
+  openChangeDialog(output: OutputTO) {
     const dialogRef = this.dialog.open(CreateOutputDialogComponent, {
       width: '300px',
 
@@ -49,11 +47,18 @@ export class OutputTableComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        console.log(result);
+        
         output.setValues(result);
         this.newItemEvent.emit(output);
       }
 
     });
+  }
+
+  openCreatenDialog() {
+    const newOtuput: OutputTO = new OutputTO();
+    this.openChangeDialog(newOtuput);
   }
 
 }

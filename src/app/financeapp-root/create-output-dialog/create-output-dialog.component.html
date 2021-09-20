@@ -33,27 +33,27 @@
 <form [formGroup]="form" class="normal-form" (submit)="onSubmit()">
           <div class="controles-container">
             <mat-form-field>
-                <input formControlName="id" [(ngModel)]="output.id" matInput value={{output.id}} placeholder="Id" >
+                <input formControlName="id" matInput value={{output.id}} placeholder="Id" >
               <mat-error>Only number.</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input formControlName="name" [(ngModel)]="output.name" matInput placeholder="Name" value={{output.name}}>
+              <input formControlName="name" matInput placeholder="Name">
               <mat-error>This field is mandatory.</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input formControlName="price" [(ngModel)]="output.entryPrice" matInput placeholder="Price" value={{output.entryPrice}} >
+              <input formControlName="price" matInput placeholder="Price"  >
               <mat-error>This field is mandatory and only number</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input formControlName="comment" [(ngModel)]="output.itemComment" matInput placeholder="Comment" value={{output.itemComment}}>
+              <input formControlName="comment" matInput placeholder="Comment" >
               <mat-error>This field is mandatory.</mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input formControlName="type" [(ngModel)]="output.itemType" matInput placeholder="Type" value={{output.itemType}}>
+              <input formControlName="type" matInput placeholder="Type" >
               <mat-error>This field is mandatory.</mat-error>
             </mat-form-field>
             <div class="add-bottom-padding">
-              <mat-checkbox [(ngModel)]="output.isPaid" value={{output.isPaid}} formControlName="isPaid" (selectionChange)="onSelectionChanged($event)">Paid</mat-checkbox>
+              <mat-checkbox formControlName="isPaid" (change)="onSelectionChanged($event)" [disabled]="form.invalid">Paid</mat-checkbox>
             </div>
           </div>
           <div class="button-row">

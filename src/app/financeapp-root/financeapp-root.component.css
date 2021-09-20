@@ -1,0 +1,6 @@
+/*todo:  this doesn't work, why? */
+
+.mat-tab-body {
+    display: flex;
+    justify-content: center;
+}

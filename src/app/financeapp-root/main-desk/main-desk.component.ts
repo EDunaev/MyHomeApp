@@ -51,6 +51,7 @@ export class MainDeskComponent implements OnInit {
   }
 
   findAllOutputs() {
+    this.outputs = [];
     this.outputService.findOutputsByMonthId(this.month.id).subscribe(data => {
       if (!Array.isArray(data)) {
         data = [data];
@@ -77,7 +78,14 @@ export class MainDeskComponent implements OnInit {
 
   saveOrUpdateOutput(output: OutputTO){
     console.log(output.name + " is paid? " + output.isPaid);
-    this.outputService.updateOutput(output).subscribe();
+    if(output.monthEntryId) {
+      this.outputService.updateOutput(output).subscribe();
+    }
+    else {
+      output.monthEntryId = this.month;
+      this.outputService.saveOutput(output).subscribe();
+      this.findAllOutputs();
+    }
     console.log(this.outputs);
   }
 

@@ -23,7 +23,7 @@ import { MainDeskComponent } from './financeapp-root/main-desk/main-desk.compone
 import { MatGridListModule } from '@angular/material/grid-list';
 import { IncomeTableComponent } from './financeapp-root/income-table/income-table.component';
 import { OutputTableComponent } from './financeapp-root/output-table/output-table.component';
-import { WavesModule, IconsModule, ButtonsModule } from 'angular-bootstrap-md';
+import { WavesModule, IconsModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatInputModule } from '@angular/material/input';
 import { CreateOutputDialogComponent } from './financeapp-root/create-output-dialog/create-output-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -32,6 +32,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -57,9 +58,11 @@ import { MatIconModule } from '@angular/material/icon';
       { path: 'test', component: ChangeSchichtComponent },
       { path: '**', component: HomeComponent }
     ]),
+    MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
     MatSliderModule,
     MatTabsModule,
+    MatTableModule,
     MatCardModule,
     MatExpansionModule,
     FormsModule, 

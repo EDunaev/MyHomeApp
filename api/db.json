@@ -130,7 +130,7 @@
   "income": [
     {
       "id": 1,
-      "income": 160,
+      "income": 55,
       "familyMember": {
         "id": 1,
         "name": "Aurora"
@@ -299,6 +299,79 @@
       "itemComment": "Miete Wohnung",
       "itemType": "Wohnung",
       "monthEntryId": null
+    },
+    {
+      "id": "10",
+      "name": "Lebensunterhalt",
+      "entryPrice": 600,
+      "itemType": "Essen",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 1719,
+        "realState": 0,
+        "actualState": 0
+      }
+    },
+    {
+      "id": "11",
+      "name": "Drillisch",
+      "entryPrice": 9.99,
+      "itemComment": "Elenas Handy",
+      "itemType": "Handy",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 1719,
+        "realState": 0,
+        "actualState": 0
+      }
+    },
+    {
+      "id": "12",
+      "name": "O2",
+      "entryPrice": 19.99,
+      "itemType": "Handy",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 1719,
+        "realState": 0,
+        "actualState": 0
+      },
+      "isPaid": false
+    },
+    {
+      "id": "13",
+      "name": "Strom",
+      "entryPrice": 52,
+      "itemComment": "Strom",
+      "itemType": "Strom",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 1719,
+        "realState": 0,
+        "actualState": 0
+      }
+    },
+    {
+      "id": "14",
+      "name": "Benzin",
+      "entryPrice": 100,
+      "itemType": "Auto",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 1719,
+        "realState": 0,
+        "actualState": 0
+      }
     }
   ],
   "outputs-by-month": [

@@ -11,13 +11,16 @@ export class OutputTO {
 
     static create(data: any): OutputTO {
         const tO = new OutputTO();
-        tO.id = data.id;
-        tO.name = data.name;
-        tO.entryPrice = data.entryPrice;
-        tO.itemComment = data.itemComment;
-        tO.itemType = data.itemType;
-        tO.isPaid = data.isPaid;
-        tO.monthEntryId = MonthEntryTO.create(data.monthEntryId);
+        tO.id = data?.id;
+        tO.name = data?.name;
+        tO.entryPrice = data?.entryPrice;
+        tO.itemComment = data?.itemComment;
+        tO.itemType = data?.itemType;
+        tO.isPaid = data?.isPaid;
+        if(data.monthEntryId) {
+            tO.monthEntryId = MonthEntryTO.create(data.monthEntryId);
+        }
+        
 
         return tO;
     }
