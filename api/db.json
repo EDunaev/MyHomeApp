@@ -312,7 +312,8 @@
         "expectedState": 1719,
         "realState": 0,
         "actualState": 0
-      }
+      },
+      "isPaid": false
     },
     {
       "id": "11",
@@ -327,7 +328,8 @@
         "expectedState": 1719,
         "realState": 0,
         "actualState": 0
-      }
+      },
+      "isPaid": false
     },
     {
       "id": "12",
@@ -357,7 +359,8 @@
         "expectedState": 1719,
         "realState": 0,
         "actualState": 0
-      }
+      },
+      "isPaid": false
     },
     {
       "id": "14",
@@ -371,7 +374,8 @@
         "expectedState": 1719,
         "realState": 0,
         "actualState": 0
-      }
+      },
+      "isPaid": false
     }
   ],
   "outputs-by-month": [

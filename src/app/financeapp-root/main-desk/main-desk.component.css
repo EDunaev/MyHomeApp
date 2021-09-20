@@ -2,12 +2,14 @@
     background: #e5e920;
   } */
   table {
-    width: auto;
+    /* width: 100%; */
     text-align: center;
+    display: contents;
   }
-
-  div {
-    text-align: center;
+  .month-table {
+    width: 100%;
+    display: inline;
   }
+ 
 
  

@@ -38,7 +38,7 @@
     <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
 </mat-grid-list> -->
 
-<div>
+<!-- <div>
 
     <income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)"></income-table>
     <output-table [outputs]="outputs" (newItemEvent)="saveOrUpdateOutput($event)"></output-table>
@@ -59,4 +59,99 @@
         </tbody>
 
     </table>
-</div>
+</div> -->
+
+<!-- <mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
+         <income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)"></income-table>
+    <output-table [outputs]="outputs" (newItemEvent)="saveOrUpdateOutput($event)"></output-table>
+    <table class="table table-striped table-bordered table-small">
+        <tbody>
+            <tr>
+                <th>Expected</th>
+                <td> {{month.expectedState}} </td>
+            </tr>
+            <tr>
+                <th>Real State</th>
+                <td> {{month.realState}} </td>
+            </tr>
+            <tr>
+                <th>Actual State</th>
+                <td> {{month.actualState}} </td>
+            </tr>
+        </tbody>
+
+    </table>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
+</mat-grid-list> -->
+
+<!-- <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
+        <output-table [outputs]="outputs" (newItemEvent)="saveOrUpdateOutput($event)"></output-table>
+    </mat-grid-tile>
+    <mat-grid-tile><income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)"></income-table></mat-grid-tile>
+    <mat-grid-tile><table class="table table-striped table-bordered table-small">
+        <tbody>
+            <tr>
+                <th>Expected</th>
+                <td> {{month.expectedState}} </td>
+            </tr>
+            <tr>
+                <th>Real State</th>
+                <td> {{month.realState}} </td>
+            </tr>
+            <tr>
+                <th>Actual State</th>
+                <td> {{month.actualState}} </td>
+            </tr>
+        </tbody>
+
+    </table></mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+  </mat-grid-list> -->
+<table >
+    <tbody>
+        <tr>
+            <td>
+                <div>
+                    <income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)">
+                    </income-table>
+                   
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <output-table [outputs]="outputs" (newItemEvent)="saveOrUpdateOutput($event)">
+                    </output-table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <table class="month-table table table-striped table-bordered ">
+                        <tbody>
+                            <tr>
+                                <th>Expected</th>
+                                <td> {{month.expectedState}} </td>
+                            </tr>
+                            <tr>
+                                <th>Real State</th>
+                                <td> {{month.realState}} </td>
+                            </tr>
+                            <tr>
+                                <th>Actual State</th>
+                                <td> {{month.actualState}} </td>
+                            </tr>
+                        </tbody>
+    
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

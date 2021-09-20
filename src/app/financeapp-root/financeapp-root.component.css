@@ -1,6 +1,28 @@
 /*todo:  this doesn't work, why? */
 
-.mat-tab-body {
-    display: flex;
+/* .mat-tab-body {
+    display: grid;
     justify-content: center;
+    place-items: center;
 }
+
+.parent-element {
+    display: grid;
+    place-items: center;
+}
+
+.mat-tab-labels {
+    display: grid;
+    justify-content: center;
+    place-items: center;
+} */
+
+::ng-deep mat-tab-body {
+    text-align: center;
+  }
+
+  table {
+    width: auto;
+    text-align: center;
+    display: contents;
+  }
