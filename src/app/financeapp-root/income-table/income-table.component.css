@@ -3,6 +3,10 @@
   text-align: center;
 } */
 
-tr.mat-footer-row {
+/* tr.mat-footer-row {
   font-weight: bold;
+} */
+
+.sticky-top {
+  text-align-last: center;
 }

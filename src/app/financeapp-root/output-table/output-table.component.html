@@ -1,6 +1,6 @@
 <div >
     <table class="table table-hover table-bordered">
-        <thead>
+        <thead class="sticky-top">
             <tr>
                 <th *ngFor="let head of displayedColumns" scope="col">{{head}} </th>
             </tr>
@@ -14,15 +14,15 @@
                 <td>
                     {{output.itemType}}
                 </td>
-                <td>{{output.entryPrice | currency:'EUR':true}}</td>
+                <td>{{output.entryPrice | currency:'EUR'}}</td>
                 <td>
-                    <button mdbBtn color="success" size="sm" mdbWavesEffect (click)="setAsPaid(output)" [ngClass]="{
+                    <button mdbBtn color="success" mdbWavesEffect (click)="setAsPaid(output)" [ngClass]="{
                     'disabled': output.isPaid, 
                     '': !output.isPaid
                     }" [disabled]='output.isPaid'>
                         Paid
                     </button>
-                    <button mdbBtn color="warning" size="sm" mdbWavesEffect
+                    <button mdbBtn color="warning" mdbWavesEffect
                         (click)="openChangeDialog(output)">Edit</button>
                 </td>
             </tr>
@@ -31,8 +31,8 @@
             <tr>
                 <td>Total</td>
                 <td></td>
-                <td>{{getTotalCost() | currency:'EUR':true}}</td>
-                <button mdbBtn color="danger" size="sm" mdbWavesEffect (click)="openCreatenDialog()">New Output</button>
+                <td>{{getTotalCost() | currency:'EUR'}}</td>
+                <button mdbBtn color="danger" mdbWavesEffect (click)="openCreatenDialog()">New Output</button>
             </tr>
         </tfoot>
 

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { OutputTO } from 'src/app/TOs/OutputTO';
 import { CustomValidators } from 'src/app/validators/custom-validators';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'create-output-dialog',
@@ -11,8 +12,9 @@ import { CustomValidators } from 'src/app/validators/custom-validators';
 })
 export class CreateOutputDialogComponent implements OnInit {
 
+  showIdField = environment.isDBLocal;
   form: FormGroup = new FormGroup({
-    id: new FormControl({ value: "", disabled: true }, CustomValidators.onlyNumberValidator),
+    id: new FormControl({ value: "", disabled: true }),
     name: new FormControl('', Validators.required),
     price: new FormControl('', [Validators.required, CustomValidators.onlyNumberValidator]),
     comment: new FormControl(''),
@@ -44,7 +46,7 @@ export class CreateOutputDialogComponent implements OnInit {
   }
 
   onSubmit() {
-    this.output.id = this.form.get('id').value;
+    this.output.id = +this.form.get('id').value;
     this.output.name = this.form.get('name').value;
     this.output.entryPrice = this.form.get('price').value;
     this.output.itemComment = this.form.get('comment').value;

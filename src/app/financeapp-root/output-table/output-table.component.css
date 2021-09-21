@@ -1,8 +1,12 @@
 table {
     width: auto;
-    text-align: right;
+    text-align: center;
   }
   
 div {
     text-align: center;
+  }
+
+  .sticky-top {
+    text-align-last: center;
   }

@@ -130,7 +130,7 @@
   "income": [
     {
       "id": 1,
-      "income": 55,
+      "income": 512,
       "familyMember": {
         "id": 1,
         "name": "Aurora"
@@ -142,11 +142,12 @@
         "expectedState": 0,
         "realState": 0,
         "actualState": 0
-      }
+      },
+      "realIncome": 555
     },
     {
       "id": 2,
-      "income": 570,
+      "income": 572,
       "familyMember": {
         "id": 2,
         "name": "Elena"
@@ -158,7 +159,8 @@
         "expectedState": 0,
         "realState": 0,
         "actualState": 0
-      }
+      },
+      "realIncome": 0
     },
     {
       "id": 3,
@@ -174,7 +176,8 @@
         "expectedState": 0,
         "realState": 0,
         "actualState": 0
-      }
+      },
+      "realIncome": 1300
     },
     {
       "id": 4,
@@ -301,7 +304,7 @@
       "monthEntryId": null
     },
     {
-      "id": "10",
+      "id": 10,
       "name": "Lebensunterhalt",
       "entryPrice": 600,
       "itemType": "Essen",
@@ -316,7 +319,7 @@
       "isPaid": false
     },
     {
-      "id": "11",
+      "id": 11,
       "name": "Drillisch",
       "entryPrice": 9.99,
       "itemComment": "Elenas Handy",
@@ -332,7 +335,7 @@
       "isPaid": false
     },
     {
-      "id": "12",
+      "id": 12,
       "name": "O2",
       "entryPrice": 19.99,
       "itemType": "Handy",
@@ -347,7 +350,7 @@
       "isPaid": false
     },
     {
-      "id": "13",
+      "id": 13,
       "name": "Strom",
       "entryPrice": 52,
       "itemComment": "Strom",
@@ -363,9 +366,9 @@
       "isPaid": false
     },
     {
-      "id": "14",
+      "id": 14,
       "name": "Benzin",
-      "entryPrice": 100,
+      "entryPrice": 90,
       "itemType": "Auto",
       "monthEntryId": {
         "id": 1,
@@ -376,6 +379,21 @@
         "actualState": 0
       },
       "isPaid": false
+    },
+    {
+      "id": 15,
+      "name": "Amazon",
+      "entryPrice": 300,
+      "itemType": "Others",
+      "monthEntryId": {
+        "id": 1,
+        "entryYear": 2021,
+        "entryMonth": 9,
+        "expectedState": 1719,
+        "realState": 0,
+        "actualState": 0
+      },
+      "isPaid": true
     }
   ],
   "outputs-by-month": [
@@ -415,9 +433,9 @@
       "id": 1,
       "entryYear": 2021,
       "entryMonth": 9,
-      "expectedState": 1719,
-      "realState": 0,
-      "actualState": 0
+      "expectedState": 282.02,
+      "realState": -46.98,
+      "actualState": -46.98
     },
     {
       "id": 2,

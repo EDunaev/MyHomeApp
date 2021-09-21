@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IncomeService } from 'src/app/services/income.service';
 import { OutputService } from 'src/app/services/output.service';
 import { IncomeTO } from 'src/app/TOs/IncomeTO';
 import { MonthEntryTO } from 'src/app/TOs/MonthEntryTO';
 import { OutputTO } from 'src/app/TOs/OutputTO';
-import {MatTable} from '@angular/material/table';
 
 @Component({
   selector: 'app-main-desk',
@@ -14,6 +13,7 @@ import {MatTable} from '@angular/material/table';
 export class MainDeskComponent implements OnInit {
 
   @Input() month: MonthEntryTO;
+  @Output() newItemEvent = new EventEmitter<MonthEntryTO>();
   incomes: IncomeTO[] = [];
   outputs: OutputTO[] = [];
   displayedColumns: string[] = ['person', 'income'];
@@ -24,8 +24,6 @@ export class MainDeskComponent implements OnInit {
   ngOnInit(): void {
     this.findAllIncomes();
     this.findAllOutputs();
-    // console.log(this.incomes);
-    // console.log(this.outputs);
   }
 
 
@@ -51,7 +49,6 @@ export class MainDeskComponent implements OnInit {
   }
 
   findAllOutputs() {
-    this.outputs = [];
     this.outputService.findOutputsByMonthId(this.month.id).subscribe(data => {
       if (!Array.isArray(data)) {
         data = [data];
@@ -71,9 +68,8 @@ export class MainDeskComponent implements OnInit {
   }
 
   saveOrUpdateIncome(income: IncomeTO){
-    console.log(income.income);
     this.incomeService.updateIncome(income).subscribe();
-    console.log(this.incomes);
+    this.updateMonthEntry();
   }
 
   saveOrUpdateOutput(output: OutputTO){
@@ -84,9 +80,32 @@ export class MainDeskComponent implements OnInit {
     else {
       output.monthEntryId = this.month;
       this.outputService.saveOutput(output).subscribe();
-      this.findAllOutputs();
     }
+    //todo: add only new elements if necessary 
+    // this.findAllOutputs();
+    this.updateMonthEntry();
+  }
+
+  updateMonthEntry() {
     console.log(this.outputs);
+    
+    const income: number = this.incomes.map(t => t.income).reduce((acc, value) => acc + value, 0);
+    const realIncome: number = this.incomes.map(t => t.realIncome).reduce((acc, value) => acc + value, 0);
+    const outcome: number = this.outputs.filter(i => !i.isPaid).map(t => t.entryPrice).reduce((acc, value) => acc + value, 0);
+
+    console.log("income " + income);
+    console.log("realIncome " + realIncome);
+    console.log("outcome " + outcome);
+
+    console.log("income - outcome " + (income - outcome));
+    console.log("realIncome - outcome " + (realIncome - outcome));
+    
+    this.month.expectedState = Number((income - outcome).toFixed(2));
+    this.month.actualState = Number((realIncome - outcome).toFixed(2));
+    this.month.realState = Number((realIncome - outcome).toFixed(2));
+
+    this.newItemEvent.emit(this.month);
+
   }
 
 }

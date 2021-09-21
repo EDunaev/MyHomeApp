@@ -2,7 +2,7 @@
     <mat-card-content>
         <mat-tab-group mat-align-tabs="center">
             <mat-tab *ngFor="let month of monthEntries" [label]='getmonthAndYear(month)'>
-                <app-main-desk [month]='month'></app-main-desk>
+                <app-main-desk [month]='month' (newItemEvent)="saveOrUpdateMonth($event)"></app-main-desk>
             </mat-tab>
         </mat-tab-group>
     </mat-card-content>

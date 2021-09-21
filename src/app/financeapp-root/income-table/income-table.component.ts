@@ -7,21 +7,24 @@ import { IncomeTO } from 'src/app/TOs/IncomeTO';
   templateUrl: './income-table.component.html',
   styleUrls: ['./income-table.component.css']
 })
-export class IncomeTableComponent implements OnInit{
+export class IncomeTableComponent implements OnInit {
 
   @Input() incomes: IncomeTO[];
   @Output() newItemEvent = new EventEmitter<IncomeTO>();
 
-  displayedColumns: string[] = ['Person', 'Income'];
+  displayedColumns: string[] = ['Person', 'Income', 'Real Income'];
   selectedIncome: IncomeTO;
 
   constructor() { }
- 
+
   ngOnInit(): void {
   }
 
   getTotalCost() {
     return this.incomes.map(t => t.income).reduce((acc, value) => acc + value, 0);
+  }
+  getTotalCostReal() {
+    return this.incomes.map(t => t.realIncome).reduce((acc, value) => acc + value, 0);
   }
 
   selectIncome(income: IncomeTO) {
@@ -32,14 +35,20 @@ export class IncomeTableComponent implements OnInit{
     return this.selectedIncome && id === this.selectedIncome.id;
   }
 
-  changeIncome(event: any) {
+  changeIncome(event: any, flag: string) {
     const value = event.target.value;
-    if(!isNaN(parseFloat(value)) && !isNaN(value - 0)){
-      this.selectedIncome.income = +event.target.value;
+    if (!isNaN(parseFloat(value)) && !isNaN(value - 0)) {
+      const numberValue: number = +event.target.value;
+      if (flag === 'income') {
+        this.selectedIncome.income = numberValue;
+      }
+      else {
+        this.selectedIncome.realIncome = numberValue;
+      }
       this.newItemEvent.emit(this.selectedIncome);
       this.selectedIncome = null;
     }
-    
+
   }
 }
 

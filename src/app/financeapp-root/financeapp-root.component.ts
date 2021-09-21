@@ -23,11 +23,7 @@ export class FinanceappRootComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllEntries();
-    // this.findAllIncomes();
-    // this.findAllOutputs();
     console.log(this.monthEntries);
-    // console.log(this.incomes);
-    // console.log(this.outputs);
   }
 
 
@@ -67,11 +63,15 @@ export class FinanceappRootComponent implements OnInit {
     });
   }
 
+  saveOrUpdateMonth(month: MonthEntryTO){
+    this.monthEntryService.updateMonthEntry(month).subscribe();
 
+  }
   
   getmonthAndYear(month: MonthEntryTO) : String {
     return month.entryMonth + '/' + month.entryYear;
 }
+
 
 
 }

@@ -1,5 +1,5 @@
 <table class="table table-striped table-bordered table-small">
-    <thead>
+    <thead class="sticky-top">
         <tr>
             <th *ngFor="let head of displayedColumns" scope="col">{{head}} </th>
         </tr>
@@ -10,13 +10,30 @@
             <td>{{income.familyMember.name}}</td>
             <td>
                 <div *ngIf="!isIncomeSelected(income.id)">
-                    {{income.income | currency:'EUR':true}}
+                    {{income.income | currency:'EUR'}}
                 </div>
                 <div *ngIf="isIncomeSelected(income.id)">
-                    <input type="text" class="form-control" (keyup.enter)="changeIncome($event)" value= {{income.income}}>
+                    <input type="text" class="form-control" (keyup.enter)="changeIncome($event, 'income')"
+                        value={{income.income}}>
+                </div>
+            </td>
+            <td>
+                <div *ngIf="!isIncomeSelected(income.id)">
+                    {{income.realIncome | currency:'EUR'}}
+                </div>
+                <div *ngIf="isIncomeSelected(income.id)">
+                    <input type="text" class="form-control" (keyup.enter)="changeIncome($event, 'realIncome')"
+                        value={{income.realIncome}}>
                 </div>
             </td>
         </tr>
     </tbody>
+    <tfoot class="grey lighten-5 w-100">
+        <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>{{getTotalCost() | currency:'EUR'}}</strong></td>
+            <td><strong>{{getTotalCostReal() | currency:'EUR'}}</strong></td>
+        </tr>
+    </tfoot>
 
 </table>
