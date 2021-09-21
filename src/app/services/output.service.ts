@@ -8,7 +8,7 @@ import { OutputTO } from '../TOs/OutputTO';
 })
 export class OutputService {
 
-  uri = environment.server;
+  uri = environment.finAppServer;
   constructor(private http: HttpClient) { }
 
 

@@ -7,7 +7,7 @@ import { MonthEntryTO } from '../TOs/MonthEntryTO';
   providedIn: 'root'
 })
 export class MonthEntryService {
-  uri = environment.server;
+  uri = environment.finAppServer;
   constructor(private http: HttpClient) { }
 
 

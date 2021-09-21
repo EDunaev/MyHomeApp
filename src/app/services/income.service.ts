@@ -7,7 +7,7 @@ import { IncomeTO } from '../TOs/IncomeTO';
   providedIn: 'root'
 })
 export class IncomeService {
-  uri = environment.server;
+  uri = environment.finAppServer;
   constructor(private http: HttpClient) {}
 
   findAllIncomes() {
