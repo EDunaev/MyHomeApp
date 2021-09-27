@@ -1,10 +1,13 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IncomeService } from '../services/income.service';
 import { MonthEntryService } from '../services/month-entry.service';
 import { OutputService } from '../services/output.service';
 import { IncomeTO } from '../TOs/IncomeTO';
 import { OutputTO } from '../TOs/OutputTO';
 import { MonthEntryTO } from '../TOs/MonthEntryTO';
+import { CreateOutputDialogComponent } from './create-output-dialog/create-output-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-financeapp-root',
@@ -13,13 +16,11 @@ import { MonthEntryTO } from '../TOs/MonthEntryTO';
 })
 export class FinanceappRootComponent implements OnInit {
 
-  monthEntries: MonthEntryTO[] = [];
-  incomes: IncomeTO[] = [];
-  outputs: OutputTO[] = [];
+  monthEntries: MonthEntryTO[][] = [[], [], []];
   constructor(
     private monthEntryService: MonthEntryService,
-    private incomeService: IncomeService,
-    private outputService: OutputService) { }
+    public dialog: MatDialog,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.findAllEntries();
@@ -35,43 +36,38 @@ export class FinanceappRootComponent implements OnInit {
 
   parseMonthEntires(data: any) {
     data.forEach((element: any) => {
-      this.monthEntries.push(MonthEntryTO.create(element));
+      switch (element.entryYear) {
+        case 2021: {
+          this.monthEntries[0].push(MonthEntryTO.create(element));
+          break;
+        }
+        case 2022: {
+          this.monthEntries[1].push(MonthEntryTO.create(element));
+          break;
+        }
+        default: {
+          this.monthEntries[2].push(MonthEntryTO.create(element));
+          break;
+        }
+      }
     });
   }
 
-  findAllIncomes() {
-    this.incomeService.findAllIncomes().subscribe(data => {
-      this.parseIncomes(data);
-    });
-  }
-
-  parseIncomes(data: any) {
-    data.forEach((element: any) => {
-      this.incomes.push(IncomeTO.create(element));
-    });
-  }
-
-  findAllOutputs() {
-    this.outputService.findAllOutputs().subscribe(data => {
-      this.parseOutputs(data);
-    });
-  }
-
-  parseOutputs(data: any) {
-    data.forEach((element: any) => {
-      this.outputs.push(OutputTO.create(element));
-    });
-  }
-
-  saveOrUpdateMonth(month: MonthEntryTO){
+  saveOrUpdateMonth(month: MonthEntryTO) {
     this.monthEntryService.updateMonthEntry(month).subscribe();
 
   }
-  
-  getmonthAndYear(month: MonthEntryTO) : String {
+
+  fillMonth(id: number) {
+    this.monthEntryService.fillMonthEntry(id).subscribe();
+  }
+
+  showOutputs() {
+    this.router.navigateByUrl('/outputs');
+  }
+
+  getmonthAndYear(month: MonthEntryTO): String {
     return month.entryMonth + '/' + month.entryYear;
-}
-
-
+  }
 
 }

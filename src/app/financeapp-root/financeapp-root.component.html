@@ -1,4 +1,4 @@
-<mat-card>
+<!-- <mat-card>
     <mat-card-content>
         <mat-tab-group mat-align-tabs="center">
             <mat-tab *ngFor="let month of monthEntries" [label]='getmonthAndYear(month)'>
@@ -6,4 +6,26 @@
             </mat-tab>
         </mat-tab-group>
     </mat-card-content>
-</mat-card>
+</mat-card> -->
+
+<div class="example-button-row">
+    <button mat-button color="primary" (click)=showOutputs()>Show Default Outputs</button>
+    <button mat-button color="primary">Create Income</button>
+</div>
+<table class="fin-table table table-striped table-bordered ">
+    <tbody>
+        <ng-container *ngFor="let year of monthEntries; let i = index">
+            <tr>
+                <td *ngFor="let month of monthEntries[i]"><h2>{{getmonthAndYear(month)}}</h2></td>
+            </tr>
+            <tr>
+                <td *ngFor="let month of monthEntries[i]">
+                    <div >
+                        <app-main-desk [month]="month" (newItemEvent)="saveOrUpdateMonth($event)" (fillMonthEvent)="fillMonth($event)"></app-main-desk>
+                    </div>
+                </td>
+            </tr>
+        </ng-container>      
+        
+    </tbody>
+</table>
