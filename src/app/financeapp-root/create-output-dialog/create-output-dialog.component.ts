@@ -14,13 +14,27 @@ export class CreateOutputDialogComponent implements OnInit {
 
   showIdField = environment.isDBLocal;
   form: FormGroup = new FormGroup({
-    id: new FormControl({ value: "", disabled: true }),
+    id: new FormControl(),
     name: new FormControl('', Validators.required),
     price: new FormControl('', [Validators.required, CustomValidators.onlyNumberValidator]),
     comment: new FormControl(''),
     type: new FormControl('', Validators.required),
     isPaid: new FormControl(false)
   });
+
+  types: String[] = [
+    'Lebnesmittel',
+    'Bargeld',
+    'Strom',
+    'Sonstiges',
+    'Handy',
+    'Abonement',
+    'Wohnung',
+    'Kredit',
+    'Versicherung',
+    'Kindergarten',
+    'Amazon'
+  ];
 
   constructor(
     public dialogRef: MatDialogRef<CreateOutputDialogComponent>,
@@ -32,6 +46,7 @@ export class CreateOutputDialogComponent implements OnInit {
     this.form.get('type').setValue(output.itemType);
     this.form.get('isPaid').setValue(output.isPaid);
     this.onSelectionChanged(null);
+    this.types = this.types.sort();
   }
 
   ngOnInit(): void {
@@ -48,10 +63,10 @@ export class CreateOutputDialogComponent implements OnInit {
   onSubmit() {
     this.output.id = +this.form.get('id').value;
     this.output.name = this.form.get('name').value;
-    this.output.entryPrice = this.form.get('price').value;
+    this.output.entryPrice = +this.form.get('price').value;
     this.output.itemComment = this.form.get('comment').value;
     this.output.itemType = this.form.get('type').value;
-    this.output.isPaid = this.form.get('isPaid').value;
+    this.output.isPaid = this.form.get('isPaid').value ? this.form.get('isPaid').value : false;
   }
   onSelectionChanged(value: any) {
     console.log(this.form.get('isPaid').value);

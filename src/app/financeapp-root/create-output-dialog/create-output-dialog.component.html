@@ -18,8 +18,13 @@
               <input formControlName="comment" matInput placeholder="Comment" >
               <mat-error>This field is mandatory.</mat-error>
             </mat-form-field>
-            <mat-form-field>
-              <input formControlName="type" matInput placeholder="Type" >
+            <mat-form-field >
+              <mat-label>Type</mat-label>
+              <mat-select formControlName="type" required>
+                <mat-option *ngFor="let t of types" [value]="t">
+                  {{ t }}
+                </mat-option>
+              </mat-select>
               <mat-error>This field is mandatory.</mat-error>
             </mat-form-field>
             <div class="add-bottom-padding">
