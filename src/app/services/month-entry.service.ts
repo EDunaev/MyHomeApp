@@ -19,6 +19,10 @@ export class MonthEntryService {
     return this.http.get(this.uri + '/api/month-entry/' + id).pipe();
   }
 
+  fillMonthEntry(id: number) {
+    return this.http.get(this.uri + '/api/fill-month-entry/' + id).pipe();
+  }
+
   saveMonthEntry(monthEntryTo: MonthEntryTO) {
     return this.http.post(this.uri + '/api/month-entry', monthEntryTo).pipe();
   }
