@@ -33,6 +33,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { DefaultOutputsComponent } from './financeapp-root/default-outputs/default-outputs.component';
 
 
 @NgModule({
@@ -46,7 +49,8 @@ import { MatTableModule } from '@angular/material/table';
     MainDeskComponent,
     IncomeTableComponent,
     OutputTableComponent,
-    CreateOutputDialogComponent
+    CreateOutputDialogComponent,
+    DefaultOutputsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,8 +60,9 @@ import { MatTableModule } from '@angular/material/table';
       { path: 'windelschicht', component: ContentTableComponent },
       { path: 'finances', component: FinanceappRootComponent },
       { path: 'test', component: ChangeSchichtComponent },
+      { path: 'outputs', component: DefaultOutputsComponent },
       { path: '**', component: HomeComponent }
-    ]),
+    ], { useHash: true }),
     MDBBootstrapModule.forRoot(),
     BrowserAnimationsModule,
     MatSliderModule,
@@ -65,7 +70,7 @@ import { MatTableModule } from '@angular/material/table';
     MatTableModule,
     MatCardModule,
     MatExpansionModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     MatGridListModule,
     MatFormFieldModule,
@@ -73,8 +78,10 @@ import { MatTableModule } from '@angular/material/table';
     MatDialogModule,
     MatCheckboxModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatToolbarModule,
     MatIconModule,
+    MatSelectModule,
     WavesModule,
     IconsModule,
     ButtonsModule,

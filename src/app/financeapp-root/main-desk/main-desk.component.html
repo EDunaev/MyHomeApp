@@ -111,14 +111,14 @@
     </table></mat-grid-tile>
     <mat-grid-tile></mat-grid-tile>
   </mat-grid-list> -->
-<table >
+<table>
     <tbody>
         <tr>
             <td>
                 <div>
                     <income-table [incomes]="incomes" (newItemEvent)="saveOrUpdateIncome($event)">
                     </income-table>
-                   
+
                 </div>
             </td>
         </tr>
@@ -137,21 +137,32 @@
                         <tbody>
                             <tr>
                                 <th>Expected</th>
-                                <td> {{month.expectedState}} </td>
+                                <td colspan="2"> {{month.expectedState | currency:'EUR'}} </td>
                             </tr>
                             <tr>
                                 <th>Real State</th>
-                                <td> {{month.realState}} </td>
+                                <td colspan="2"> {{month.realState | currency:'EUR'}} </td>
                             </tr>
                             <tr>
                                 <th>Actual State</th>
-                                <td> {{month.actualState}} </td>
+                                <td> {{realWithActualStates() | currency:'EUR'}} </td>
+                                <td (click)="isAuctualStateEditable = true;">
+                                    <div *ngIf="!isAuctualStateEditable">
+                                        {{month.actualState | currency:'EUR'}}
+                                    </div>
+                                    <div *ngIf="isAuctualStateEditable">
+                                        <input type="text" class="form-control"
+                                            (keyup.enter)="changeActualState($event)" value={{month.actualState}}>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
-    
+
                     </table>
+                    
                 </div>
             </td>
         </tr>
     </tbody>
 </table>
+<div><button *ngIf="outputs.length === 0" mdbBtn color="danger" mdbWavesEffect (click)="fillMonth()">Fill Month</button></div>

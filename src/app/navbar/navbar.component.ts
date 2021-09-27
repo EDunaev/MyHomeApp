@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.activatedRoute.snapshot.root);
-    this.router.navigate([this.activeLink.link]);
+    // this.router.navigate([this.activeLink.link]);
     
     
     

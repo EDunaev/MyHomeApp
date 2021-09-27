@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { OutputTO } from 'src/app/TOs/OutputTO';
 import { CreateOutputDialogComponent } from '../create-output-dialog/create-output-dialog.component';
@@ -8,10 +8,11 @@ import { CreateOutputDialogComponent } from '../create-output-dialog/create-outp
   templateUrl: './output-table.component.html',
   styleUrls: ['./output-table.component.css']
 })
-export class OutputTableComponent implements OnInit {
+export class OutputTableComponent implements OnInit, OnChanges {
 
   @Input() outputs: OutputTO[];
   @Output() newItemEvent = new EventEmitter<OutputTO>();
+  @Output() fillMonthEvent = new EventEmitter<OutputTO>();
   displayedColumns: string[] = ['Name', 'Item Type', 'Price', 'Command'];
   selectedOutput: OutputTO;
   constructor(public dialog: MatDialog) { }
@@ -19,15 +20,18 @@ export class OutputTableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log("from onChanges");
+    console.log(changes);
+  }
+
+
   selectOutput(output: OutputTO) {
     this.selectedOutput = output;
   }
   setAsPaid(output: OutputTO) {
     output.isPaid = true;
     this.newItemEvent.emit(output);
-  }
-  saveOrUpdateOutput(event: any) {
-
   }
 
   getTotalCost() {
@@ -48,7 +52,7 @@ export class OutputTableComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log(result);
-        
+
         output.setValues(result);
         this.newItemEvent.emit(output);
       }

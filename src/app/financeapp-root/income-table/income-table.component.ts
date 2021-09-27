@@ -38,7 +38,7 @@ export class IncomeTableComponent implements OnInit {
   changeIncome(event: any, flag: string) {
     const value = event.target.value;
     if (!isNaN(parseFloat(value)) && !isNaN(value - 0)) {
-      const numberValue: number = +event.target.value;
+      const numberValue: number = +value;
       if (flag === 'income') {
         this.selectedIncome.income = numberValue;
       }

@@ -1,0 +1,41 @@
+<div class="example-button-row">
+    <button mat-button color="primary" (click)=backToFinance()>Back</button>
+</div>
+
+<div >
+    <table class="table table-hover table-bordered">
+        <thead class="sticky-top">
+            <tr>
+                <th *ngFor="let head of displayedColumns" scope="col">{{head}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let output of outputs" [ngClass]="{
+            'bg-success': output.isPaid, 
+            '': !output.isPaid
+            }">
+                <td>{{output.name}}</td>
+                <td>
+                    {{output.itemType}}
+                </td>
+                <td>{{output.entryPrice | currency:'EUR'}}</td>
+                <td>
+                    <button mdbBtn color="success" mdbWavesEffect (click)="deleteOutput(output.id)">
+                        Delete
+                    </button>
+                    <button mdbBtn color="warning" mdbWavesEffect
+                        (click)="openChangeDialog(output)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td>{{getTotalCost() | currency:'EUR'}}</td>
+                <button mdbBtn color="danger" mdbWavesEffect (click)="openCreatenDialog()">New Output</button>
+            </tr>
+        </tfoot>
+
+    </table>
+</div>
