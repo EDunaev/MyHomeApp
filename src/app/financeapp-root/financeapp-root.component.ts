@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IncomeService } from '../services/income.service';
 import { MonthEntryService } from '../services/month-entry.service';
-import { OutputService } from '../services/output.service';
-import { IncomeTO } from '../TOs/IncomeTO';
-import { OutputTO } from '../TOs/OutputTO';
 import { MonthEntryTO } from '../TOs/MonthEntryTO';
-import { CreateOutputDialogComponent } from './create-output-dialog/create-output-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
@@ -63,7 +58,11 @@ export class FinanceappRootComponent implements OnInit {
   }
 
   showOutputs() {
-    this.router.navigateByUrl('/outputs');
+    this.router.navigateByUrl('/outputs/standard');
+  }
+
+  showOutputsTesting() {
+    this.router.navigateByUrl('/outputs/test');
   }
 
   getmonthAndYear(month: MonthEntryTO): String {

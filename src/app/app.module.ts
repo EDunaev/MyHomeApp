@@ -60,7 +60,7 @@ import { DefaultOutputsComponent } from './financeapp-root/default-outputs/defau
       { path: 'windelschicht', component: ContentTableComponent },
       { path: 'finances', component: FinanceappRootComponent },
       { path: 'test', component: ChangeSchichtComponent },
-      { path: 'outputs', component: DefaultOutputsComponent },
+      { path: 'outputs/:mode', component: DefaultOutputsComponent },
       { path: '**', component: HomeComponent }
     ], { useHash: true }),
     MDBBootstrapModule.forRoot(),

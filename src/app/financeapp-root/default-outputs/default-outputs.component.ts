@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OutputService } from 'src/app/services/output.service';
 import { OutputTO } from 'src/app/TOs/OutputTO';
 import { CreateOutputDialogComponent } from '../create-output-dialog/create-output-dialog.component';
@@ -12,24 +12,30 @@ import { CreateOutputDialogComponent } from '../create-output-dialog/create-outp
 })
 export class DefaultOutputsComponent implements OnInit {
 
+  isTest: boolean = false;
   outputs: OutputTO[] = [];
   displayedColumns: string[] = ['Name', 'Item Type', 'Price'];
   constructor(
     private outputService: OutputService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.outputService.findOutputsByMonthId(0).subscribe(data => {
-      this.parseOutputs(data);
+      this.handleOutputResponse(data);
     });
+    this.route.params.subscribe(parameter => {
+      this.isTest = parameter.mode === 'test';
+    })
   }
 
   parseOutputs(data: any) {
     data.forEach((element: any) => {
       this.outputs.push(OutputTO.create(element));
     });
+    this.outputs = this.outputs.sort(((a, b) => (a.entryPrice > b.entryPrice ? -1 : 1)));
   }
 
   backToFinance() {
@@ -45,15 +51,20 @@ export class DefaultOutputsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        console.log(result);
         output.setValues(result);
-        this.outputService.saveOutput(result).subscribe(data => {
-          if (changeOutput) {
-            this.handleOutputResponse(data);
+        if (!this.isTest) {
+          this.outputService.saveOutput(result).subscribe(data => {
+            if (changeOutput) {
+              this.handleOutputResponse(data);
+            }
+          });
+        }
+        else {
+          if(!this.outputs.includes(output)) {
+            this.handleOutputResponse(output);
           }
-        });
+        }
       }
-
     });
   }
 
@@ -61,7 +72,7 @@ export class DefaultOutputsComponent implements OnInit {
     if (!Array.isArray(data)) {
       data = [data];
     }
-    this.parseOutputs(data.sort(((a, b) => (a.entryPrice > b.entryPrice ? -1 : 1))))
+    this.parseOutputs(data);
   }
 
   openCreatenDialog() {
@@ -74,7 +85,7 @@ export class DefaultOutputsComponent implements OnInit {
   }
 
   deleteOutput(id: number) {
-    this.outputService.deleteOutput(id).subscribe();
+    if (!this.isTest) this.outputService.deleteOutput(id).subscribe();
     this.outputs = this.outputs.filter(o => o.id !== id).sort(((a, b) => (a.entryPrice > b.entryPrice ? -1 : 1)));
   }
 }

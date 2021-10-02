@@ -15,6 +15,7 @@ export class OutputTableComponent implements OnInit, OnChanges {
   @Output() fillMonthEvent = new EventEmitter<OutputTO>();
   displayedColumns: string[] = ['Name', 'Item Type', 'Price', 'Command'];
   selectedOutput: OutputTO;
+  showAllOutputsButton: boolean = false;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -60,9 +61,26 @@ export class OutputTableComponent implements OnInit, OnChanges {
     });
   }
 
+  filteredOutputs() {
+    if(this.showAllOutputsButton) {
+      return this.outputs;
+    }
+    else {
+      return this.outputs.filter(o => !o.isPaid); 
+    }
+  }
+
   openCreatenDialog() {
     const newOtuput: OutputTO = new OutputTO();
     this.openChangeDialog(newOtuput);
   }
 
+  getButtonName() {
+    if(this.showAllOutputsButton) {
+      return 'Hide paid outputs';
+    }
+    else {
+      return 'Show all outputs';
+    }
+  }
 }
