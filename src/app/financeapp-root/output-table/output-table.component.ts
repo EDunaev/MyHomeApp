@@ -13,7 +13,7 @@ export class OutputTableComponent implements OnInit, OnChanges {
   @Input() outputs: OutputTO[];
   @Output() newItemEvent = new EventEmitter<OutputTO>();
   @Output() fillMonthEvent = new EventEmitter<OutputTO>();
-  displayedColumns: string[] = ['Name', 'Item Type', 'Price', 'Command'];
+  displayedColumns: string[] = ['Name', 'Type', 'Preis', 'Handlung'];
   selectedOutput: OutputTO;
   showAllOutputsButton: boolean = false;
   constructor(public dialog: MatDialog) { }
@@ -36,7 +36,11 @@ export class OutputTableComponent implements OnInit, OnChanges {
   }
 
   getTotalCost() {
+    if(this.showAllOutputsButton) {
+      return this.outputs.map(t => t.entryPrice).reduce((acc, value) => acc + value, 0);
+    }
     return this.outputs.filter(i => !i.isPaid).map(t => t.entryPrice).reduce((acc, value) => acc + value, 0);
+    
   }
 
   isOutputSelected(id: number) {
@@ -77,10 +81,10 @@ export class OutputTableComponent implements OnInit, OnChanges {
 
   getButtonName() {
     if(this.showAllOutputsButton) {
-      return 'Hide paid outputs';
+      return 'Bezahlte Ausgaben Ausblenden';
     }
     else {
-      return 'Show all outputs';
+      return 'Alle Ausgaben Anzeigen';
     }
   }
 }

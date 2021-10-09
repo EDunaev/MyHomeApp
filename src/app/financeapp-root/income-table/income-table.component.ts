@@ -12,7 +12,7 @@ export class IncomeTableComponent implements OnInit {
   @Input() incomes: IncomeTO[];
   @Output() newItemEvent = new EventEmitter<IncomeTO>();
 
-  displayedColumns: string[] = ['Person', 'Income', 'Real Income'];
+  displayedColumns: string[] = ['Person', 'Erwartetes Einkommen', 'Einkommen'];
   selectedIncome: IncomeTO;
 
   constructor() { }

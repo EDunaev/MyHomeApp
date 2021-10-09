@@ -9,7 +9,8 @@
             <tr *ngFor="let output of filteredOutputs()" (click)="selectOutput(output)" [ngClass]="{
             'bg-success': output.isPaid, 
             '': !output.isPaid
-            }">
+            }"
+            matTooltip="{{output.itemComment}}">
                 <td>{{output.name}}</td>
                 <td>
                     {{output.itemType}}
@@ -20,18 +21,18 @@
                     'disabled': output.isPaid, 
                     '': !output.isPaid
                     }" [disabled]='output.isPaid'>
-                        Paid
+                        Bezahlt
                     </button>
-                    <button mdbBtn color="warning" mdbWavesEffect (click)="openChangeDialog(output)">Edit</button>
+                    <button mdbBtn color="warning" mdbWavesEffect (click)="openChangeDialog(output)">Ändern</button>
                 </td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td>Total</td>
+                <td>Gesamt</td>
                 <td></td>
                 <td>{{getTotalCost() | currency:'EUR'}}</td>
-                <button mdbBtn color="danger" mdbWavesEffect (click)="openCreatenDialog()">New Output</button>
+                <button mdbBtn color="danger" mdbWavesEffect (click)="openCreatenDialog()">Neue Ausgabe</button>
             </tr>
         </tfoot>
 

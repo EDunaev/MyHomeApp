@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>{{output.id?"Change output dialog":"Create output dialog"}}</h1>
+<h1 mat-dialog-title>{{output.id?"Ausgabe Ändern Dialog":"Ausgabe Erstellen Dialog"}}</h1>
 
 <form [formGroup]="form" class="normal-form" (submit)="onSubmit()">
           <div class="controles-container">
@@ -28,11 +28,11 @@
               <mat-error>This field is mandatory.</mat-error>
             </mat-form-field>
             <div class="add-bottom-padding">
-              <mat-checkbox formControlName="isPaid" (change)="onSelectionChanged($event)" [disabled]="form.invalid">Paid</mat-checkbox>
+              <mat-checkbox formControlName="isPaid" (change)="onSelectionChanged($event)" [disabled]="form.invalid">Bezahlt</mat-checkbox>
             </div>
           </div>
           <div class="button-row">
-            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-button (click)="onNoClick()">Abbrechen</button>
             <button mat-button  [disabled]="form.invalid" type="submit" [mat-dialog-close]="output">OK</button>
           </div>
 </form>

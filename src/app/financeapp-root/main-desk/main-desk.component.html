@@ -136,18 +136,18 @@
                     <table class="month-table table table-striped table-bordered ">
                         <tbody>
                             <tr>
-                                <th>Expected</th>
+                                <th>Erwartet</th>
                                 <td colspan="2"> {{month.expectedState | currency:'EUR'}} </td>
                             </tr>
                             <tr>
-                                <th>Real State</th>
+                                <th>Bezahlt</th>
                                 <td colspan="2"> {{month.realState | currency:'EUR'}} </td>
                             </tr>
                             <tr>
-                                <th>Actual State</th>
+                                <th>Kontostand</th>
                                 <td> {{realWithActualStates() | currency:'EUR'}} </td>
                                 <td (click)="isAuctualStateEditable = true;">
-                                    <div *ngIf="!isAuctualStateEditable">
+                                    <div *ngIf="!isAuctualStateEditable" matTooltip="Übertrag vorheriges Montas">
                                         {{month.actualState | currency:'EUR'}}
                                     </div>
                                     <div *ngIf="isAuctualStateEditable">
@@ -159,10 +159,11 @@
                         </tbody>
 
                     </table>
-                    
+
                 </div>
             </td>
         </tr>
     </tbody>
 </table>
-<div><button *ngIf="outputs.length === 0" mdbBtn color="danger" mdbWavesEffect (click)="fillMonth()">Fill Month</button></div>
+<div><button *ngIf="outputs.length === 0" mdbBtn color="danger" mdbWavesEffect (click)="fillMonth()">Monat Füllen</button>
+</div>

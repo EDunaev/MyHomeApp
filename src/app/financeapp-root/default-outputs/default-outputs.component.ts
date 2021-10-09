@@ -14,7 +14,7 @@ export class DefaultOutputsComponent implements OnInit {
 
   isTest: boolean = false;
   outputs: OutputTO[] = [];
-  displayedColumns: string[] = ['Name', 'Item Type', 'Price'];
+  displayedColumns: string[] = ['Name', 'Type', 'Preis'];
   constructor(
     private outputService: OutputService,
     public dialog: MatDialog,

@@ -23,7 +23,7 @@ export class CreateOutputDialogComponent implements OnInit {
   });
 
   types: String[] = [
-    'Lebnesmittel',
+    'Lebensmittel',
     'Bargeld',
     'Strom',
     'Sonstiges',
@@ -33,7 +33,8 @@ export class CreateOutputDialogComponent implements OnInit {
     'Kredit',
     'Versicherung',
     'Kindergarten',
-    'Amazon'
+    'Amazon',
+    'Weiterbildung'
   ];
 
   constructor(

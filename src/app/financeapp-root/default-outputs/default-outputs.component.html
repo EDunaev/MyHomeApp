@@ -1,5 +1,5 @@
 <div class="example-button-row">
-    <button mat-button color="primary" (click)=backToFinance()>Back</button>
+    <button mat-button color="primary" (click)=backToFinance()>Zurück</button>
 </div>
 
 <div >
@@ -21,16 +21,16 @@
                 <td>{{output.entryPrice | currency:'EUR'}}</td>
                 <td>
                     <button mdbBtn color="success" mdbWavesEffect (click)="deleteOutput(output.id)">
-                        Delete
+                        Löschen
                     </button>
                     <button mdbBtn color="warning" mdbWavesEffect
-                        (click)="openChangeDialog(output)">Edit</button>
+                        (click)="openChangeDialog(output)">Ändern</button>
                 </td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td>Total</td>
+                <td>Gesamt</td>
                 <td></td>
                 <td>{{getTotalCost() | currency:'EUR'}}</td>
                 <button mdbBtn color="danger" mdbWavesEffect (click)="openCreatenDialog()">New Output</button>

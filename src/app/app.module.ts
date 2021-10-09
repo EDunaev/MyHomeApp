@@ -36,6 +36,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { DefaultOutputsComponent } from './financeapp-root/default-outputs/default-outputs.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -82,6 +83,7 @@ import { DefaultOutputsComponent } from './financeapp-root/default-outputs/defau
     MatToolbarModule,
     MatIconModule,
     MatSelectModule,
+    MatTooltipModule,
     WavesModule,
     IconsModule,
     ButtonsModule,
