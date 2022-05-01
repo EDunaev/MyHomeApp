@@ -12,6 +12,10 @@ import { Router } from '@angular/router';
 export class FinanceappRootComponent implements OnInit {
 
   monthEntries: MonthEntryTO[][] = [[], [], []];
+  monthEntriesNew: MonthEntryTO[] = [];
+  rowCounter: number;
+  columnNumber: number = 4;
+  
   constructor(
     private monthEntryService: MonthEntryService,
     public dialog: MatDialog,
@@ -19,13 +23,14 @@ export class FinanceappRootComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllEntries();
-    console.log(this.monthEntries);
+    console.log(this.monthEntriesNew);
   }
 
 
   findAllEntries() {
     this.monthEntryService.findAllMonthEntries().subscribe(data => {
-      this.parseMonthEntires(data);
+    //  this.parseMonthEntires(data);
+      this.parseMonthEntriesNew(data);
     });
   }
 
@@ -46,6 +51,26 @@ export class FinanceappRootComponent implements OnInit {
         }
       }
     });
+  }
+
+  parseMonthEntriesNew(data: any) {
+    let counter: number = 0;
+    this.rowCounter = 1;
+    data.forEach((element: any) => {
+      counter++;
+      let month: MonthEntryTO = MonthEntryTO.create(element);
+      month.lineNumber = this.rowCounter;
+      this.monthEntriesNew.push(month);
+
+      if(counter%this.columnNumber === 0) {
+        counter = 0;
+        this.rowCounter++;
+      }
+
+    });
+  }
+  getEntriesForRow(rowNumber: number) {
+    return this.monthEntriesNew.filter(entry => entry.lineNumber === rowNumber);
   }
 
   saveOrUpdateMonth(month: MonthEntryTO) {

@@ -13,7 +13,7 @@
     <button mat-button color="primary" (click)=showOutputsTesting()>Zahlungen Testen</button>
     <button mat-button color="primary">Einkommen Erstellen</button>
 </div>
-<table class="fin-table table table-striped table-bordered ">
+<!-- <table class="fin-table table table-striped table-bordered ">
     <tbody>
         <ng-container *ngFor="let year of monthEntries; let i = index">
             <tr>
@@ -21,6 +21,23 @@
             </tr>
             <tr>
                 <td *ngFor="let month of monthEntries[i]">
+                    <div >
+                        <app-main-desk [month]="month" (newItemEvent)="saveOrUpdateMonth($event)" (fillMonthEvent)="fillMonth($event)"></app-main-desk>
+                    </div>
+                </td>
+            </tr>
+        </ng-container>      
+        
+    </tbody>
+</table> -->
+<table class="fin-table table table-striped table-bordered ">
+    <tbody>
+        <ng-container *ngFor="let line of [].constructor(rowCounter); let i = index">
+            <tr>
+                <td *ngFor="let month of getEntriesForRow(i+1)"><h2>{{getmonthAndYear(month)}}</h2></td>
+            </tr>
+            <tr>
+                <td *ngFor="let month of getEntriesForRow(i+1)">
                     <div >
                         <app-main-desk [month]="month" (newItemEvent)="saveOrUpdateMonth($event)" (fillMonthEvent)="fillMonth($event)"></app-main-desk>
                     </div>

@@ -5,6 +5,7 @@ export class MonthEntryTO {
     expectedState: number;
     realState: number;
     actualState: number;
+    lineNumber: number;
 
     static create(data: any): MonthEntryTO {
         const tO = new MonthEntryTO();
